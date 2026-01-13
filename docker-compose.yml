@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  node-api:
+    build:
+      context: ./node-api
+      dockerfile: Dockerfile
+    container_name: node-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    volumes:
+      - ./node-api:/usr/src/app
+      - /usr/src/app/node_modules
+
+  react-frontend:
+    build:
+      context: ./react-frontend
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    ports:
+      - "8080:5173"
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://node-api:3000
+    volumes:
+      - ./react-frontend:/usr/src/app
+      - /usr/src/app/node_modules
