@@ -5,6 +5,12 @@ Description
 - Front-end (React) was initially generated using AI and then customized to improve productivity and demonstrate deep product knowledge.
 - Front-end supports two read modes: direct API mode (calls the backend endpoints) and Firebase Realtime Database mode (reads /users). Both modes are implemented.
 
+
+How to run
+- Updated the node_api/src/v1/serviceAccountKey.json with json keys send via e-mail.
+- From project root: docker-compose up
+- Open: http://localhost:8080
+
 Features
 - CRUD endpoints for users
 - Users schema: id, name, zip_code, latitude, longitude, timezone
@@ -45,10 +51,6 @@ Firebase
 - Realtime Database path used: /users
 - Front-end can optionally read users directly from Firebase instead of the API (toggle in FE).
 - Ensure Firebase credentials/config are provided to the front-end.
-
-How to run
-- From project root: docker-compose up
-- Open: http://localhost:8080
 
 Notes
 - OpenWeather API key included above (7afa46f2e91768e7eeeb9001ce40de19).
