@@ -122,7 +122,7 @@ export default function User() {
     } else {
          try{
         setIsLoading(true); 
-        await createUser(editingId, userPayload);
+        await createUser(userPayload);
         }catch(err){
         console.error('Error Create user:', err);
         setError('Failed to Create user. Please try again.');

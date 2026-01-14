@@ -14,7 +14,7 @@ COPY . .
 ENV NODE_ENV=development
 
 # Expose app port (adjust if your app uses a different port)
-EXPOSE 8080
+EXPOSE 5173
 
 # Run dev script
 CMD ["npm", "run", "dev"]
