@@ -6,6 +6,7 @@ import { database } from '../firebase/firebase';
 
 export default function User() {
     const [users, setUsers] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const [usersFirebase, setUsersFirebase] = useState([]);
     const [editingId, setEditingId] = useState(null);
     const [form, setForm] = useState({
@@ -109,7 +110,6 @@ export default function User() {
         }
     if (editingId) {
         try{
-        setIsLoading(true); 
         await updateUser(editingId, userPayload);
         }catch(err){
         console.error('Error updating user:', err);
